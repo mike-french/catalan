@@ -29,24 +29,23 @@ Optionally append an equals sign and the result of evaluating the expression, or
  - Catalan Number \[[wikipedia](http://en.wikipedia.org/wiki/Catalan_number)\]
  - Online Encyclopedia of Integer Sequences \[[A000108](http://oeis.org/A000108)\]
 
- ## Example
+## Example
  
- For expression `7+7/7-7` the output should be:
- ```
- (7+(7/(7-7))) 
- (7+((7/7)-7)) 
- ((7+7)/(7-7)) 
- ((7+(7/7))-7)
- (((7+7)/7)-7) 
- ```
- Where there are 3 operators, and C4 = 5, so 5 possibilities.
+For expression `7+7/7-7` there are 3 operators and C4 = 5, so 5 possibilities:
+```
+(7+(7/(7-7))) 
+(7+((7/7)-7)) 
+((7+7)/(7-7)) 
+((7+(7/7))-7)
+(((7+7)/7)-7) 
+```
 
- The example/0 function is hardcoded with the 5-operator expression: `"7+7÷7+7x7-7"` 
- which generates C6 = 42 lines of output.
+The example/0 function is hardcoded with the 5-operator expression: `"7+7÷7+7x7-7"`   
+which generates C6 = 42 lines of output.
  
- ## Solutions
+## Solutions
  
- ### Simple Imperative
+### Simple Imperative
  
 The `brackets` module contains a simple 10-line solution to print all the bracketings.
  
@@ -57,7 +56,7 @@ A simple recursive decomposition of the expression:
   - decompose the left and right sub-expressions recursively
   - write each possibility with brackets around each operator expression
 
-The solution is written in an imperative style, with indexed access to lists, as if they were arrays. However, because the output increases so rapidly with n, it is expected that all the input strings will be quite short. The final string concatenation uses the inefficient ++ operator, but again, the strings are short, so it should not be a problem. We could use list construction `[$(|Left] ++ [Op|Right] ++ ...`, but I think `++` is much clearer.
+The code is not performance critical, so clarity beats efficiency. The solution is written in an imperative style, with indexed access to lists, as if they were arrays (slow). The final string concatenation uses the `++` operator (slow). We could use list construction `[$(|Left] ++ [Op|Right] ++ ...`, but I think `++` is much clearer. 
 
 #### Usage:
 
@@ -71,9 +70,9 @@ At the Erlang shell:
  ((7+(7/7))-7) 
  (((7+7)/7)-7) 
  ok
- > brackets:example()
- ... __42 lines of output__
- ok
+> brackets:example().
+ ... 
+ok
  ```
 
 ### Recursive AST
@@ -103,7 +102,7 @@ At the Erlang shell:
  ((7+(7/7))-7) = 1
  (((7+7)/7)-7) = -5
  ok
- > catalan:example()
- ... __42 lines of output__
+ > catalan:example().
+ ... 
  ok
  ```
