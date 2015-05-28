@@ -30,7 +30,7 @@ Optionally append an equals sign and the result of evaluating the expression, or
  
 | n | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |---|---|---|---|---|---|---|---|---|---|----|
-| Cn | 1 | 2 | 5 | 14 | 42 | 132 | 429 | 1430 | 4862 |
+| Cn | 1 | 2 | 5 | 14 | 42 | 132 | 429 | 1430 | 4862 | 16796 |
 
 ## Example
  
