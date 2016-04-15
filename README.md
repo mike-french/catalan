@@ -59,7 +59,7 @@ A simple recursive decomposition of the expression:
   - Decompose the left and right sub-expressions recursively.
   - Write each possibility with brackets around each operator expression.
 
-The code is not performance critical, so clarity beats efficiency. The solution is written in an imperative style, with indexed access to lists, as if they were arrays (slow). The final string concatenation uses the `++` operator (slow). We could use list construction, such as `[$(|Left] ++ [Op|Right] ++ ...`, but I think `++` is much clearer. 
+The code is not performance critical, so clarity beats efficiency. The solution is written in an imperative style, with indexed access to lists, as if they were arrays (slow). The final string concatenation uses the `++` operator (slow). 
 
 #### Usage:
 
