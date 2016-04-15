@@ -220,7 +220,7 @@ print_eval( Tree ) when is_tuple(Tree) ->
 -spec pr( value() ) -> string().
 
 pr( nan ) -> "NaN";
-pr( I ) when (I-trunc(I) < 1.0e-5) -> io_lib:format( "~B", [trunc(I)] );
+pr( I ) when (abs(I-trunc(I)) < 1.0e-5) -> io_lib:format( "~B", [trunc(I)] );
 pr( X ) when is_float(X) -> io_lib:format( "~p", [X] ).
 
 % -----------------------------------------
