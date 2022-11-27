@@ -44,7 +44,7 @@ For expression `7+7/7-7` there are 3 operators and C3 = 5 possibilities:
 ```
 
 The `example/0` function is hardcoded with the 5-operator expression: `"7+7÷7+7x7-7"`   
-which generates C5 = 42 lines of output (see [`example.txt`](https://rawgit.com/mike-french/catalan/master/example.txt)).
+which generates C5 = 42 lines of output (see [`example.txt`](example.txt)).
  
 ## Solutions
  
